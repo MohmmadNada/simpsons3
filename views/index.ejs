@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <h1>to home page</h1>
+        </a>
+        <a href="/favorite-quotes">
+            <h1>to favorite-quotes</h1>
+        </a>
+
+    </header>
+    <main>
+        <div class="element.characterDirection">
+            <%allSipmsons.forEach(element=>{%>
+                <h1>
+                    <%=element.character%>
+                </h1>
+                <h3>
+                    <%=element.quote%>
+                </h3>
+                <img src="<%=element.image%>" alt="">
+
+                <form action="/favorite-quotes" method="POST">
+                    <input type="hidden" name="saveSimpson" value=" <%=element.quote%>">
+                    <input type="hidden" name="saveSimpson" value=" <%=element.character%>">
+                    <input type="hidden" name="saveSimpson" value=" <%=element.image%>">
+                    <input type="hidden" name="saveSimpson" value=" <%=element.characterDirection%>">
+                    <button type="submit">save Simpson</button>
+                </form>
+                <%})%>
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>favorite</title>
+</head>
+
+<body>
+    <header>
+        <h1> favorite page
+        </h1>
+        <a href="/">
+            <h3>to home page</h3>
+        </a>
+        <a href="/favorite-quotes">
+            <h3>to favorite-quotes</h3>
+        </a>
+
+    </header>
+    <main>
+        <%saves.forEach(element=>{%>
+            <div class="<%=element.characterdirection%>">
+                <img src="<%=element.image%>" alt="">
+                <h3>
+                    <%=element.character%>
+                </h3>
+                <p>
+                    <%=element.quote%>
+                </p>
+                <form action="/favorite-quotes/<%=element.id%>" method="GET">
+                    <button type="submit">View Details</button>
+                </form>
+            </div>
+            <%})%>
+    </main>
+</body>
+
+</html>

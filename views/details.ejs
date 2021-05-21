@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details</title>
+</head>
+
+<body>
+    <header>
+        <h1> details page</h1>
+        <a href="/">
+            <h3>to home page</h3>
+        </a>
+        <a href="/favorite-quotes">
+            <h3>to favorite-quotes</h3>
+        </a>
+    </header>
+    <main>
+        <div>
+            <h3>
+                <%=detailsData.character%>
+            </h3>
+            <p>
+                <%=detailsData.quote%>
+            </p>
+            <img src="<%=detailsData.image%>" alt="">
+            <form action="/favorite-quotes/<%=detailsData.id%>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+            <form action="/favorite-quotes/<%=detailsData.id%>?_method=PUT" method="POST">
+                <button type="submit">Update</button>
+                <input type="hidden" name="updataForm" value="<%=detailsData.id%>">
+                <textarea name="updataForm" id="" cols="30" rows="10"><%=detailsData.quote%></textarea>
+                <input type="hidden" name="updataForm" value="<%=detailsData.character%>">
+                <input type="hidden" name="updataForm" value="<%=detailsData.image%>">
+                <input type="hidden" name="updataForm" value="<%=detailsData.characterdirection%>">
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
